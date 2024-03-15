@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+<body>
+    
+<% if (locals.officialName) { %>
+    <table>
+        <tbody>
+            <tr>
+                <td>Official Name : </td>
+                <td><%= officialName %></td>
+            </tr>
+            <tr>
+                <td>Flag : </td>
+                <td><img src="<%= flagUrl %>" alt="" width="100"></td>
+            </tr>
+            <tr>
+                <td>Capital : </td>
+                <td><%= capital %></td>
+            </tr>
+            <tr>
+                <td>Population : </td>
+                <td><%= population %></td>
+            </tr>
+        </tbody>
+    </table>
+    <%  } else { %>
+        <form action="/" method="post">
+            <label for="countryName">Country</label>
+        
+            <select name="countryName" id="countryName">
+                <option value="">Select a country...</option>
+                <% countries.forEach(country => { %>
+                    <option value="<%= country.name.common %>"><%= country.name.common %></option>
+                <% }); %>
+            </select>
+            <button type="submit">Show more information</button>
+        </form>
+        <% } %>
+
+    <script>
+        $(document).ready(function() {
+          $("#countryName").select2();
+        });
+      </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+html{
+    color-scheme: dark;
+}
+
+*{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 5rem auto 0 auto;
+    gap: 1rem;
+    width: 30%;
+}
+
+.select2-container--default .select2-results__option--selected {
+    color: black;
+    font-size: 14px;
+}
+.select2-results__option--selectable{
+    color: black;
+    font-size: 14px;
+}
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable{
+    color: black;
+    font-size: 14px;
+}
+
+table, th, td {
+    border: 2px white solid;
+  }
+  table {
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+    width: 50%;
+    border-collapse: collapse;
+  }
+  td{
+    padding: 1rem;
+  }
+  td:first-child{
+    font-weight: 400;
+    width: 40%;
+  }
